@@ -19,3 +19,6 @@ Code for Benchmarked Small Area Prediction (Canadian Journal of Statistics, 2018
 > - FakeDataNRI.Rdata: Data simulated to have properties similar to NRI data
 
 ## Nonadditive error models -- code for simulation 2
+* benchmarkeb1simphi1comparemult.R: Code to run simulation
+* BenchmarkRevisionSimulationUpdate61917.Rdata: file with simulation output.
+* "Code" folder -- required functions

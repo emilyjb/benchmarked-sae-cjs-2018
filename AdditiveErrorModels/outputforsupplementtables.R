@@ -1,8 +1,4 @@
 
-setwd("G:/Researchers-Investigators/Berg/CountyEstsBenchmarkTest/BenchmarkingAugmented/RevistedBenchmarkingAugmentedSimCode2")
-
-load("UpdateCodeSim2-17-18Kappa06.Rdata")
-
 library("xtable")
 
 ############################   Output for Supplement 

@@ -83,6 +83,16 @@ repeat{
 	g1hat <- cond.moms[2,] - (cond.moms[1,])^2
 	phat.EB.store <- rbind(phat.EB.store, phat.EB)
 	g1hat.store <- rbind(g1hat.store, g1hat)
+
+	### Compute Bayes predictor for comparison
+	pitv.B.tv <- replicate(500, genpitv.m(rep(mu, length(nis)), sigma2u))
+	cond.moms.tv <- sapply(1:length(nis), condmom.binom.i, pitv.B.tv, phats, nis)
+	phat.B <- cond.moms.tv[1,]
+	g1hat.tv <- cond.moms.tv[2,]  - (cond.moms.tv[1,])^2
+
+	phat.Bs <- rbind(phat.Bs, phat.B)
+	g1hat.tvs <- rbind(g1hat.tvs, g1hat.tv)
+
 	
 	##### Compute Phi
 	phi.inv <- apply(pitv.B*(1-pitv.B),1,mean)/nis + apply(pitv.B,1,var)

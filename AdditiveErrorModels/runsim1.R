@@ -17,7 +17,7 @@ datlistgen <- vector("list", 5000)
 ####### To reproduce the results in the paper, load this set of generated data for sigma^2_u = 0.005
 #################### load("Sig2u005datlistgen.Rdata")
 ####### To reproduce the results in the supplement for sigma^2_u = 0.06, load this set of generated data: 
-#################### load("Sig2u06datlistgen.Rdata")
+ load("Sig2u06datlistgen.Rdata")
 
 ### restrictthet = 1 restricts the slope to be 1 (as is the model for SPREE)
 ### restrictthet != 1 leaves the slope unrestricted, as in paper. 
@@ -33,7 +33,7 @@ iter <- iter + 1
 
 ##### Generate data
 ##### Comment the line with "datlistgen[[iter]]" out if using a set of existing generated data:
- datlistgen[[iter]] <- lapply(1:4, gendatafun, Pik, Tdotk, nks, ncs, deltasmat, alphasvec, taus, fakeck,K)
+### datlistgen[[iter]] <- lapply(1:4, gendatafun, Pik, Tdotk, nks, ncs, deltasmat, alphasvec, taus, fakeck,K)
 
 datlistnew <- datlistgen[[iter]]
 

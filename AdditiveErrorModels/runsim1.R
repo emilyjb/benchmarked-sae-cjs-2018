@@ -33,7 +33,7 @@ iter <- iter + 1
 
 ##### Generate data
 ##### Comment the line with "datlistgen[[iter]]" out if using a set of existing generated data:
-datlistgen[[iter]] <- lapply(1:4, gendatafun, Pik, Tdotk, nks, ncs, deltasmat, alphasvec, taus, fakeck,K)
+ datlistgen[[iter]] <- lapply(1:4, gendatafun, Pik, Tdotk, nks, ncs, deltasmat, alphasvec, taus, fakeck,K)
 
 datlistnew <- datlistgen[[iter]]
 
@@ -186,8 +186,7 @@ diffmseaugd <- apply((predaugBHFs[1:maxcnt,]  - pstars[1:maxcnt,])^2,2,mean)-app
 diffmseauge <- apply((predaugWinvs[1:maxcnt,] - pstars[1:maxcnt,])^2,2,mean)-apply((predunimods[1:maxcnt,] - pstars[1:maxcnt,])^2,2,mean)
 
 df.diffmsecompare <- data.frame( Ve = apply(phats[1:maxcnt,] - pstars[1:maxcnt,],2, var), predmod =apply((predunimods[1:maxcnt,] - pstars[1:maxcnt,])^2,2,mean), predrak = diffmserak,  predaugd = diffmseaugd, predauge = diffmseauge)
-data.frame(rep(nks, each = 2),Tdotk = rep( Tdotk, each= 2), as.vector(Pik), df.diffmsecompare*10000)[c(1,5,15,19),]
-
+ 
 ###### Table 2 set 2: 
 
 diffmserakneword <- apply((predrakReords[1:maxcnt,] - pstars[1:maxcnt,])^2,2,mean)-apply((predunimods[1:maxcnt,] - pstars[1:maxcnt,])^2,2,mean)
@@ -195,8 +194,7 @@ diffmseaugdneword <- apply((predaugBHFReords[1:maxcnt,] - pstars[1:maxcnt,])^2,2
 diffmseaugeneword <- apply((predaugWinvReords[1:maxcnt,] - pstars[1:maxcnt,])^2,2,mean)-apply((predunimods[1:maxcnt,] - pstars[1:maxcnt,])^2,2,mean)
 
 df.diffmsecompareset2 <- data.frame(Ve = apply((phats[1:maxcnt,] - pstars[1:maxcnt,]), 2, var),  predmod = apply((predunimods[1:maxcnt,] - pstars[1:maxcnt,])^2, 2, mean),  predrak = diffmserakneword,  predaugd = diffmseaugdneword, predauge = diffmseaugeneword)
-data.frame(rep(nks, each = 2),rep( Tdotk, each= 2), as.vector(Pik), df.diffmsecompareset2*10000)[c(1,5,15,19),]
-
+ 
 newtab2 <- rbind(data.frame(rep(nks, each = 2),Tdotk = rep( Tdotkreord, each= 2)/sum(Tdotkreord), as.vector(Pik), df.diffmsecompare*10000)[c(1,5,15,19),],
 data.frame(rep(nks, each = 2),Tdotk = rep( Tdotk, each= 2)/sum(Tdotk), as.vector(Pik),  df.diffmsecompareset2*10000)[c(1,5,15,19),])
 
